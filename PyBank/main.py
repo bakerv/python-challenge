@@ -24,4 +24,23 @@ For x in range(1,months+1):
         If x < min:
             min = x
 # print to terminal
+print("Profit Analysis")
+print("----------------------")
+print(f"Time Period: {months} months")
+print(f"Net Profit: ${netprofit}")
+print(f"Average Profit: ${average}")
+print(f"Greatest gain: ${max}")
+print(f"Greatest loss: ${min}")
 #export results 
+import sys
+defaultout = sys.stdout
+with open('pyBank_output.txt','w') as text:
+    sys.stdout = text
+    print("Profit Analysis")
+    print("----------------------")
+    print(f"Time Period: {months} months")
+    print(f"Net Profit: ${netprofit}")
+    print(f"Average Profit: ${average}")
+    print(f"Greatest gain: ${max}")
+    print(f"Greatest loss: ${min}")
+sys.stdout = defaultout

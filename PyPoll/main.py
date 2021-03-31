@@ -7,8 +7,13 @@ votes = rows(dataset ) - 1
 # A complete list of candidates who received votes
 with dataset(column3):
     #identify unique values in this column, turn this column into a set?
-# the percentage of votes each candidate won
-for x in()
+    candidates = set(column3)
 # the total number of votes each candidate won
+whovotes[len(canditates)] = 0
+with candidates(column3)
+    for x in range(2,dataset rows +1):
+       whovotes(candidates(x)) = whovotes(candidates(x)) +1
+# the percentage of votes each candidate won
+percentvotes = (whovotes/votes) * 100 #round this to 1 decimal
 
 # The winner of the election based on popular vote

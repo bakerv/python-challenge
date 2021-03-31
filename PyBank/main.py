@@ -34,7 +34,7 @@ print(f"Greatest loss: ${min}")
 #export results 
 import sys
 defaultout = sys.stdout
-with open('pyBank_output.txt','w') as text:
+with open('Analysis\pyBank_output.txt','w') as text:
     sys.stdout = text
     print("Profit Analysis")
     print("----------------------")

@@ -5,6 +5,7 @@ import csv
 filepath = os.path.join("Resources","budget_data.csv")
 months = 0
 netprofit = 0
+monthlyprofits = []
 # read in the data set
 with open(filepath) as temp:
     budgetdata = csv.reader(temp,delimiter=",")
@@ -13,11 +14,13 @@ with open(filepath) as temp:
     for rows in budgetdata:
         print(rows[1]) #target testing
         months = months + 1 # row counting, excludes header
- #  new loop to ignore headers      
-    for rows in range(1,months+1):
-            netprofit = netprofit + rows[1]
-    print(months) #testing counter
-    print(str(netprofit))    
+        monthlyprofits.append(rows[1])
+for x in range(1,months):
+    netprofit = netprofit + int(monthlyprofits[x])      
+print(months) #testing counter
+print(monthlyprofit)
+print(netprofit)        
+
 #%%
 
 
@@ -27,8 +30,7 @@ months = len(datasetrows) or rows(data)
 #The net total amount of pofit losses over the entier period 
 #Summation of all rows column 2
 netprofit = 0
- For x in range(1,months+1):
-     netprofit = netprofit + x,column2
+
 
 # The average of the changes in profit/losses over the entier period
 average= netprofit/months

@@ -6,7 +6,7 @@ votes = rows(dataset ) - 1
 
 # A complete list of candidates who received votes
 with dataset(column3):
-    #identify unique values in this column, turn this column into a set?
+    #identify unique values in this column, turn this column into a set? Yes read in the candidate column from the csv as a set to get unique values
     candidates = set(column3)
 # the total number of votes each candidate won
 whovotes[len(canditates)] = 0

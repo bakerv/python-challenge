@@ -1,0 +1,7 @@
+Profit Analysis
+----------------------
+Time Period: 87 months
+Net Profit: $38382578
+Average Profit: $441179.06
+Greatest gain: $-1196225
+Greatest loss: $1170593

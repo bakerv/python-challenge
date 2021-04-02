@@ -12,48 +12,48 @@ with open(filepath) as temp:
     print(budgetdata)
     # iterate through each row    
     for rows in budgetdata:
-        print(rows[1]) #target testing
+
         months = months + 1 # row counting, excludes header
         monthlyprofits.append(rows[1])
 for x in range(1,months):
-    netprofit = netprofit + int(monthlyprofits[x])      
+    netprofit = netprofit + int(monthlyprofits[x])
+    
+
+#%%
+#The greatest increase in profits over the entire period
+maxvalue = 0
+for x in range(1,months):
+    if int(monthlyprofits[x]) > maxvalue:
+        maxvalue = int(monthlyprofits[x])
+        
+minvalue = 0
+# the greatest decrease in losses over the entire period
+for x in range(1,months):
+    if int(monthlyprofits[x]) < minvalue:
+            minvalue = int(monthlyprofits[x])
+            
+average= (round(netprofit/months,2))
+
 print(months) #testing counter
 print(monthlyprofit)
-print(netprofit)        
+print(netprofit)  
+print(minvalue)
+print(maxvalue)
+print(average)      
 
 #%%
 
-
-# Total number of months in the data set
-#   Use the len function to count the number of rows in the data set
-months = len(datasetrows) or rows(data) 
-#The net total amount of pofit losses over the entier period 
-#Summation of all rows column 2
-netprofit = 0
-
-
 # The average of the changes in profit/losses over the entier period
-average= netprofit/months
 
-#The greatest increase in profits over the entire period
-max = 0
-For x in range(1,months+1):
-    If x > max:
-        max = x
- min = 0       
-# the greatest decrease in losses over the entire period
-    For x in range(1,months+1):
-        
-        If x < min:
-            min = x
+
 # print to terminal
 print("Profit Analysis")
 print("----------------------")
 print(f"Time Period: {months} months")
 print(f"Net Profit: ${netprofit}")
 print(f"Average Profit: ${average}")
-print(f"Greatest gain: ${max}")
-print(f"Greatest loss: ${min}")
+print(f"Greatest gain: ${minvalue}")
+print(f"Greatest loss: ${maxvalue}")
 #export results 
 import sys
 defaultout = sys.stdout
@@ -64,6 +64,6 @@ with open('Analysis\pyBank_output.txt','w') as text:
     print(f"Time Period: {months} months")
     print(f"Net Profit: ${netprofit}")
     print(f"Average Profit: ${average}")
-    print(f"Greatest gain: ${max}")
-    print(f"Greatest loss: ${min}")
+    print(f"Greatest gain: ${minvalue}")
+    print(f"Greatest loss: ${maxvalue}")
 sys.stdout = defaultout

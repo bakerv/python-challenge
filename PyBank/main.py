@@ -1,20 +1,24 @@
-#
+#%%
 import os
 import csv
 # locate the data set
 filepath = os.path.join("Resources","budget_data.csv")
-Month = 0
-#read in the data set
+months = 0
+netprofit = 0
+# read in the data set
 with open(filepath) as temp:
     budgetdata = csv.reader(temp,delimiter=",")
     print(budgetdata)
     # iterate through each row    
     for rows in budgetdata:
-        print(rows)
-        Month = Month + 1
-    print(Month)
-        
-
+        print(rows[1]) #target testing
+        months = months + 1 # row counting, excludes header
+ #  new loop to ignore headers      
+    for rows in range(1,months+1):
+            netprofit = netprofit + rows[1]
+    print(months) #testing counter
+    print(str(netprofit))    
+#%%
 
 
 # Total number of months in the data set
@@ -37,6 +41,7 @@ For x in range(1,months+1):
  min = 0       
 # the greatest decrease in losses over the entire period
     For x in range(1,months+1):
+        
         If x < min:
             min = x
 # print to terminal

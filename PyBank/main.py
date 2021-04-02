@@ -1,5 +1,21 @@
-data = open(Resources\'Budget_data.csv')
-# Objectives
+#
+import os
+import csv
+# locate the data set
+filepath = os.path.join("Resources","budget_data.csv")
+Month = 0
+#read in the data set
+with open(filepath) as temp:
+    budgetdata = csv.reader(temp,delimiter=",")
+    print(budgetdata)
+    # iterate through each row    
+    for rows in budgetdata:
+        print(rows)
+        Month = Month + 1
+    print(Month)
+        
+
+
 
 # Total number of months in the data set
 #   Use the len function to count the number of rows in the data set

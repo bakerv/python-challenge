@@ -2,15 +2,16 @@
 import os
 import csv
 
-# Locate the data set
-filepath = os.path.join("Resources","budget_data.csv")
+
+filepath = os.path.join("Resources","budget_data.csv") #Data location
+
+# Get operating parameters from the data set
 months = 0
 netprofit = 0
 date = []
 monthlyprofits = []
-# Get operating parameters from the data set
 with open(filepath) as temp:
-    budgetdata = csv.reader(temp,delimiter=",")
+    budgetdata = csv.reader(temp,delimiter=",") # Read in the CSV file
     headers = next(budgetdata)     
     for rows in budgetdata:
         months += 1 
@@ -28,20 +29,19 @@ for x in range(months):
     if int(monthlyprofits[x]) > maxvalue:
         maxvalue = int(monthlyprofits[x])
         maxdate = str(date[x])
-        
+ 
+# The greatest losses over the entire period
 minvalue = 0
 mindate = ""
-# the greatest decrease in losses over the entire period
 for x in range(months):
     if int(monthlyprofits[x]) < minvalue:
             minvalue = int(monthlyprofits[x])
             mindate = str(date[x])
 
-average= (round(netprofit/months,2))
-# The average of the changes in profit/losses over the entier period
+# The average of the changes in profit/losses over the entire period
+average = (round(netprofit/months,2))
 
-
-# print to terminal
+# Output to terminal
 print(f'''Profit Analysis
 ----------------------
 Time Period: {months} months
@@ -50,16 +50,16 @@ Average Profit: ${average}
 Greatest gain: {maxdate} ${maxvalue}
 Greatest loss: {mindate} ${minvalue}''')
 
-#export results 
+#Output to text file
 import sys
 defaultout = sys.stdout
 with open('Analysis\PyBank_output.txt','w') as text:
     sys.stdout = text
     print(f'''Profit Analysis
-    ----------------------
-    Time Period: {months} months
-    Net Profit: ${netprofit}
-    Average Profit: ${average}
-    Greatest gain: {maxdate} ${maxvalue}
-    Greatest loss: {mindate} ${minvalue}''')
+----------------------
+Time Period: {months} months
+Net Profit: ${netprofit}
+Average Profit: ${average}
+Greatest gain: {maxdate} ${maxvalue}
+Greatest loss: {mindate} ${minvalue}''')
 sys.stdout = defaultout

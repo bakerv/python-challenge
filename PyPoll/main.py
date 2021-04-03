@@ -2,6 +2,7 @@ import os
 import csv
 numrows = 0
 uniquenames = set()
+
 file_path = os.path.join("Resources","election_data.csv")
 with open(file_path,"r") as temp:
     electiondata = csv.reader(temp, delimiter=",")
@@ -18,18 +19,15 @@ print(f'votes: {votes}')
 
 
 # count votes
-
 with open(file_path,"r") as temp:
     electiondata = csv.reader(temp, delimiter=",")   
     for rows in electiondata:
-        test = str(rows[2])
         for names in candidates:
-            test2 = str(candidates(names))
-            if test == test2:
-                votes[names.index] +=1
+            if rows[2] == names:
+                votes[candidates.index(names)] +=1
             
                
-                print(totalvotes)
+print(totalvotes)
 print(candidates)
 print(votes)
     

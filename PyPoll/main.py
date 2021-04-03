@@ -15,9 +15,10 @@ uniquenames.remove("Candidate")
 candidates = list(uniquenames)
 votes = [0] * len(candidates)
 print(f'votes: {votes}')
+
+
 # count votes
-print(electiondata)
-counter = 0
+
 with open(file_path,"r") as temp:
     electiondata = csv.reader(temp, delimiter=",")   
     for rows in electiondata:

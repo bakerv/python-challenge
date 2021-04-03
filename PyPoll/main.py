@@ -12,8 +12,8 @@ def PyPoll(input_path,output_path):
         headers = next(electiondata) # store headers
         for rows in electiondata:
             totalvotes += 1
-            uniquenames.add(rows[2])        
-    
+            uniquenames.add(rows[2])
+ 
     # Count the votes
     candidates = list(uniquenames)
     votes = [0] * len(candidates)
@@ -63,4 +63,19 @@ import os
 datalocation = os.path.join("Resources","election_data.csv")
 saveto = os.path.join("Analysis","PyPoll_Output.txt")
 
-PyPoll(datalocation,saveto)
+# PyPoll(datalocation,saveto)
+import csv
+with open(datalocation,"r") as temp: 
+    electiondata = csv.reader(temp, delimiter=",") # read in the CSV file  
+    headers = next(electiondata) # store headers
+    candidatelist = {}
+    for rows in electiondata:
+        if rows[2] in candidatelist.keys():
+            candidatelist[rows[2]]+=1
+        else:
+            candidatelist[rows[2]] = 1
+    print(candidatelist)      
+    # for rows in electiondata:
+        
+        
+

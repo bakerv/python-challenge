@@ -36,6 +36,7 @@ for x in range(1,numrows):
     if int(monthlyprofits[x]) > maxvalue:
         maxvalue = int(monthlyprofits[x])
         maxdate = str(date[x])
+        
 minvalue = 0
 mindate = ""
 # the greatest decrease in losses over the entire period

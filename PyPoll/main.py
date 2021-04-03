@@ -1,13 +1,40 @@
-# Objectives
+import os
 import csv
-open('Resources\election_data',"r") # change this to importing data filee using csv
-# The total number of votes cast
-votes = rows(dataset ) - 1
+numrows = 0
+uniquenames = set()
+file_path = os.path.join("Resources","election_data.csv")
+with open(file_path,"r") as temp:
+    electiondata = csv.reader(temp, delimiter=",")
 
-# A complete list of candidates who received votes
-with dataset(column3):
-    #identify unique values in this column, turn this column into a set? Yes read in the candidate column from the csv as a set to get unique values
-    candidates = set(column3)
+    for rows in electiondata:
+        numrows += 1
+        uniquenames.add(rows[2])
+        
+totalvotes = numrows - 1
+uniquenames.remove("Candidate")
+candidates = list(uniquenames)
+votes = [0] * len(candidates)
+print(f'votes: {votes}')
+# count votes
+print(electiondata)
+counter = 0
+with open(file_path,"r") as temp:
+    electiondata = csv.reader(temp, delimiter=",")   
+    for rows in electiondata:
+        test = str(rows[2])
+        for names in candidates:
+            test2 = str(candidates(names))
+            if test == test2:
+                votes[names.index] +=1
+            
+               
+                print(totalvotes)
+print(candidates)
+print(votes)
+    
+  
+#%%
+
 # the total number of votes each candidate won
 whovotes[len(canditates)] = 0
 with candidates(column3)

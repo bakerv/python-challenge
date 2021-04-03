@@ -2,19 +2,18 @@
 import os
 import csv
 
+file_path = os.path.join("Resources","election_data.csv")
 
 # Get operating parameters from the data set
-numrows = 0
+totalvotes = 0
 uniquenames = set()
 
-file_path = os.path.join("Resources","election_data.csv")
 with open(file_path,"r") as temp:
-    electiondata = csv.reader(temp, delimiter=",")
+    electiondata = csv.reader(temp, delimiter=",")     
+    headers=next(electiondata) # store headers
     for rows in electiondata:
-        numrows += 1
-        uniquenames.add(rows[2])
-totalvotes = numrows - 1        
-uniquenames.remove("Candidate")
+        totalvotes += 1
+        uniquenames.add(rows[2])        
 
 # Count the votes
 candidates = list(uniquenames)

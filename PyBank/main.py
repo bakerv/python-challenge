@@ -1,4 +1,4 @@
-#%%
+# dependencies
 import os
 import csv
 
@@ -27,8 +27,6 @@ for x in range(1,numrows):
     netprofit = netprofit + int(monthlyprofits[x])
 print(netprofit)
     
-
-#%%
 #The greatest increase in profits over the entire period
 maxvalue = 0
 maxdate = ""
@@ -52,8 +50,6 @@ print(netprofit)
 print(minvalue)
 print(maxvalue)
 print(average)      
-
-#%%
 
 # The average of the changes in profit/losses over the entier period
 

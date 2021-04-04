@@ -9,7 +9,8 @@ def PyBank(filepath,outputpath):
     monthlyprofits = []
     with open(filepath) as temp:
         budgetdata = csv.reader(temp,delimiter=",") # Read in the CSV file
-        headers = next(budgetdata)     
+        headers = next(budgetdata) # Store headers
+        print(f'Headers: {headers}')
         for rows in budgetdata:
             months += 1 
             date.append(rows[0])

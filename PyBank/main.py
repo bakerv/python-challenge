@@ -1,3 +1,4 @@
+#Receives a two column dataset as input, and outputs analysis in a written format
 def PyBank(filepath,outputpath):
     # Dependencies
     import csv
@@ -39,20 +40,8 @@ def PyBank(filepath,outputpath):
     # The average of the changes in profit/losses over the entire period
     average = (round(netprofit/months,2))
     
-    # Output to terminal
-    print(f'''Profit Analysis
-----------------------
-Time Period: {months} months
-Net Profit: ${netprofit}
-Average Profit: ${average}
-Greatest gain: {maxdate} ${maxvalue}
-Greatest loss: {mindate} ${minvalue}''')
-    
-    #Output to text file
-    import sys
-    defaultout = sys.stdout
-    with open(outputpath,'w') as text:
-        sys.stdout = text
+    # Formatting for written output
+    def outputresults():
         print(f'''Profit Analysis
 ----------------------
 Time Period: {months} months
@@ -60,6 +49,15 @@ Net Profit: ${netprofit}
 Average Profit: ${average}
 Greatest gain: {maxdate} ${maxvalue}
 Greatest loss: {mindate} ${minvalue}''')
+    # Output results to the terminal
+    outputresults()
+
+    #Output results to text file
+    import sys
+    defaultout = sys.stdout
+    with open(outputpath,'w') as text:
+        sys.stdout = text
+        outputresults()    
     sys.stdout = defaultout
 
 # Call PyBank

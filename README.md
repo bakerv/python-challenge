@@ -4,6 +4,8 @@ This repository contains two functions developed to complete basic accounting ta
 
 ## **PyBank**
 PyBank is a basic accounting function. Given dates and figures associated with those date, PyBank will output the sum, mean, min, and max of the data set.  The output is displayed in the terminal, and written to a specified location.
+ 
+![PyBank](PyBank/Images/Sample.png)
 
 ### *Data Format*
 Data should be in two columns (Months),(Profit). With months as the first column, and the profit/loss for that month as the second column
@@ -11,5 +13,6 @@ Data should be in two columns (Months),(Profit). With months as the first column
 ## **PyPoll**
 PyPoll is a vote counting function. PyBoll uses the dictionary function to sort through and tally a data column of names, determine the frequecny each occurs, and declare a winner for the election.
 
+![PyPoll](PyPoll/Images/Sample.png)
 ### *Data Format*
 The votes should be in the third column of the data set. Currently, the information in the first two columns is not used. Future development will implement voter ID tracking to ensure a person only votes once, as well as a county level information breakdown.

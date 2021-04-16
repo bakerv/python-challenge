@@ -2,7 +2,7 @@
 
 This repository contains two functions developed to complete basic accounting tasks, and count election votes.
 
-## **PyBank**
+## **PyBank()**
 PyBank is a basic accounting function. Given dates and figures associated with those date, PyBank will output the sum, mean, min, and max of the data set.  The output is displayed in the terminal, and written to a specified location.
  
 ![PyBank](https://github.com/bakerv/python-challenge/blob/main/PyBank/Images/Sample.PNG)
@@ -10,8 +10,8 @@ PyBank is a basic accounting function. Given dates and figures associated with t
 ### *Data Format*
 Data should be in two columns (Months),(Profit). With months as the first column, and the profit/loss for that month as the second column
 
-## **PyPoll**
-PyPoll is a vote counting function. PyBoll uses the dictionary function to sort through and tally a data column of names, determine the frequecny each occurs, and declare a winner for the election.
+## **PyPoll()**
+PyPoll is a vote counting function. PyPoll uses the python dictionary function to sort through and tally a data column of names, determine the frequecny each occurs, and declare a winner for the election.
 
 ![PyPoll](https://github.com/bakerv/python-challenge/blob/main/PyPoll/Images/Sample.PNG)
 ### *Data Format*
